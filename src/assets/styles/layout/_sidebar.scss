@@ -1,0 +1,123 @@
+.sidebar {
+  position: fixed;
+  width: $size_bg;
+  height: 100vh;
+  display: block;
+  background-color: $cl_white;
+  box-shadow: 0 0 10px -2px rgba($color: #000000, $alpha: 0.15);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  &--dark {
+    background-color: $cl_bg_dark;
+    .menu {
+      .item {
+        &__link {
+          &--active {
+            position: relative;
+            background-color: #1890ff !important;
+            span {
+              color: $cl_white !important;
+            }
+            .icon {
+              color: $cl_white !important;
+            }
+            &::after {
+              background-color: $cl_white;
+            }
+          }
+          .icon {
+            color: $cl_white;
+          }
+          span {
+            color: $cl_white;
+          }
+        }
+      }
+    }
+    &__footer {
+      .theme {
+        color: $cl_white;
+        .icon {
+          padding-right: 5px;
+        }
+      }
+      .switch {
+        width: 50%;
+        text-align: right;
+      }
+    }
+  }
+  .logo {
+    text-align: center;
+    padding: 18px 0;
+    box-shadow: 0 0 10px 2px rgba($color: #000000, $alpha: 0.15);
+    &__title {
+      color: $cl_green;
+      font-weight: 700;
+      padding-left: 10px;
+    }
+    img {
+      width: 30px;
+    }
+  }
+  .menu {
+    margin-top: 30px;
+    .item {
+      &__link {
+        padding: 12px 20px;
+        @include flexbox();
+        @include align-items(center);
+        &--active {
+          position: relative;
+          background-color: rgba($color: #1890ff, $alpha: 0.15);
+          span {
+            color: $cl_green;
+          }
+          .icon {
+            color: $cl_green;
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 2px;
+            background-color: $cl_green;
+            right: 0;
+            top: 0;
+          }
+        }
+        .icon {
+          color: $cl_text;
+          @include rem(font-size, 13);
+        }
+        span {
+          padding-left: 10px;
+          color: $cl_text;
+          @include rem(font-size, 13);
+        }
+      }
+    }
+  }
+  &__footer {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    @include flexbox();
+    align-items: center;
+    .theme {
+      @include flexbox();
+      align-items: center;
+      width: 50%;
+      @include rem(font-size, 13);
+      .icon {
+        padding-right: 5px;
+      }
+    }
+    .switch {
+      width: 50%;
+      text-align: right;
+    }
+  }
+}

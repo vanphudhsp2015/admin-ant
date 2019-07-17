@@ -1,0 +1,92 @@
+.login {
+  position: relative;
+  background-image: url("../../assets/images/background/background_login.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  .overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #ffffff, $alpha: 0.3);
+  }
+  &__content {
+    position: absolute;
+    left: 50%;
+    width: 450px;
+    top: 50%;
+    @include transform(translate(-50%, -50%));
+  }
+  &__header {
+    padding: 10px 0;
+    .content {
+      &__title {
+        @include rem(font-size, 36);
+        @include rem(line-height, 36);
+        color: rgba($color: #000000, $alpha: 0.7);
+        font-family: "Lato-Light";
+        padding-bottom: 20px;
+      }
+      &__norm {
+        @include rem(font-size, 20);
+        @include rem(line-height, 20);
+        font-family: "Lato-Light";
+        color: rgba($color: #000000, $alpha: 0.5);
+      }
+      &__divider {
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        .divider {
+          color: rgba($color: #000000, $alpha: 0.5);
+          @include rem(font-size, 14);
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          width: 45%;
+          background-color: rgba($color: #000000, $alpha: 0.2);
+          height: 1px;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 45%;
+          background-color: rgba($color: #000000, $alpha: 0.2);
+          height: 1px;
+        }
+      }
+    }
+  }
+  &__main {
+    .form {
+      &__group {
+        .ant-input-affix-wrapper {
+          height: 40px;
+        }
+        .button {
+          width: 100%;
+          height: 40px;
+        }
+      }
+    }
+  }
+  &__footer {
+    .content {
+      &__norm {
+        @include rem(font-size, 12);
+        @include rem(line-height, 24);
+        .link {
+          color: rgba($color: #000000, $alpha: 0.7);
+          border-bottom: 1px solid rgba($color: #000000, $alpha: 0.7);
+        }
+      }
+    }
+  }
+}

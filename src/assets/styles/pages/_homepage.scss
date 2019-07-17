@@ -1,0 +1,121 @@
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+  overflow: hidden;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba($color: #000000, $alpha: 0.1);
+  max-height: 50px;
+  width: 10px;
+  overflow: hidden;
+}
+
+.wrapper {
+  @include flexbox();
+  justify-content: space-between;
+}
+.main {
+  position: relative;
+  width: calc(100% - 256px);
+  width: -webkit-calc(100% - 256px);
+  margin-left: $size_bg;
+  overflow: hidden;
+}
+.bread {
+  background-color: transparent;
+  padding: 20px 0;
+  margin-top: 60px;
+  .content {
+    &__norm {
+      @include flexbox();
+      @include align-items(center);
+      @include rem(font-size, 14);
+      color: rgba($color: #000000, $alpha: 0.5);
+    }
+    &__icon {
+      padding-right: 5px;
+    }
+  }
+}
+.custom {
+  background-color: $cl_white;
+  padding: 20px;
+  box-shadow: 0 0 10px -2px rgba($color: #000000, $alpha: 0.2);
+  &__heading {
+    padding: 10px 0;
+    .content {
+      &--disable {
+        display: none;
+      }
+      &__norm {
+        display: inline;
+        @include rem(font-size, 14);
+        color: rgba($color: #000000, $alpha: 0.7);
+        padding-right: 10px;
+        background-color: transparent;
+      }
+    }
+
+    .search {
+      width: 300px;
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+    .button {
+      margin-left: 10px;
+    }
+  }
+  &__content {
+    .table {
+      border: 1px solid rgba($color: #000000, $alpha: 0.1);
+      .avatar {
+        background-color: rgba($color: #000000, $alpha: 0.5);
+        text-transform: uppercase;
+        &--current {
+          background-color: $cl_red;
+          text-transform: uppercase;
+        }
+        &--active {
+          background-color: $cl_green;
+          text-transform: uppercase;
+        }
+      }
+      ::-webkit-scrollbar {
+        background-color: transparent;
+        width: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: rgba($color: #000000, $alpha: 0.1);
+        max-height: 50px;
+        width: 10px;
+      }
+    }
+  }
+}
+.modal__form {
+  .form {
+    &__group {
+      @include flexbox();
+      &--right {
+        text-align: right;
+        .button {
+          margin-left: 5px;
+        }
+      }
+      // @include justify-content(center);
+      .input {
+        width: 300px;
+      }
+    }
+  }
+}
+
+.modal__content {
+  .ant-modal-body {
+    padding: 16px 10px 0px 10px;
+  }
+  .ant-form-item-label {
+    width: 120px;
+  }
+}
